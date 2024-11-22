@@ -19,9 +19,17 @@ jobs:
         run: |
           git clone https://github.com/work-spaces/workflows.git
 
-      # Step 3: Run Spaces Commands
+      # Step 3: Spaces Checkout
       - name: Spaces Checkout
         run: |
           spaces checkout --spaces-starlark-sdk --script=workflows/llvm-build --name=llvm-build
+        env:
+           GH_TOKEN: ${{ github.token }}
+
+      # Step 4: Spaces Run
+      - name: Spaces Run
+        run: |
           cd llvm-build
           spaces run
+        env:
+           GH_TOKEN: ${{ github.token }}
