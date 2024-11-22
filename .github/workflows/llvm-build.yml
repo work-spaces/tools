@@ -1,0 +1,28 @@
+name: Spaces LLVM Build Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-spaces:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      # Step 1: Install the Spaces CLI tool
+      - name: Install Spaces CLI
+        uses: install-spaces@v1
+
+      # Step 2: Clone Workflows Repository
+      - name: Clone Workflows Repository
+        run: |
+          git clone https://github.com/work-spaces/workflows.git
+
+      # Step 3: Run Spaces Commands
+      - name: Spaces Checkout
+        run: 
+          spaces checkout --spaces-starlark-sdk --script=workflows/llvm-build --name=llvm-build
+          cd llvm-build
+          spaces run
