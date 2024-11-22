@@ -21,7 +21,7 @@ jobs:
 
       # Step 3: Run Spaces Commands
       - name: Spaces Checkout
-        run: 
+        run: |
           spaces checkout --spaces-starlark-sdk --script=workflows/llvm-build --name=llvm-build
           cd llvm-build
           spaces run
