@@ -1,4 +1,4 @@
-name: Spaces LLVM Build Workflow
+name: Spaces Ninja Build Workflow
 
 on: workflow_dispatch
 
