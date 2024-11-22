@@ -13,7 +13,7 @@ jobs:
     steps:
       # Step 1: Install the Spaces CLI tool
       - name: Install Spaces CLI
-        uses: install-spaces@v0.10.1
+        uses: work-spaces/install-spaces@v0.10.1
 
       # Step 2: Clone Workflows Repository
       - name: Clone Workflows Repository
