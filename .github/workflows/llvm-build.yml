@@ -1,7 +1,6 @@
 name: Spaces LLVM Build Workflow
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   run-spaces:
