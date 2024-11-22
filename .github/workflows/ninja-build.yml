@@ -18,6 +18,8 @@ jobs:
       - name: Clone Workflows Repository
         run: |
           git clone https://github.com/work-spaces/workflows.git
+        env:
+           GH_TOKEN: ${{ github.token }}
 
       # Step 3: Spaces Checkout
       - name: Spaces Checkout
