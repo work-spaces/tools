@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, macos-14]
+        os: [ubuntu-latest, macos-latest, macos-14-large]
     env:
       GH_TOKEN: ${{ github.token }}
       GIT_TERMINAL_PROMPT: 0
