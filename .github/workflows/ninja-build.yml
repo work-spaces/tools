@@ -2,6 +2,9 @@ name: Spaces Ninja Build Workflow
 
 on: workflow_dispatch
 
+permissions:
+  packages: write   # Allow modifying releases or packages
+
 jobs:
   run-spaces:
     runs-on: ${{ matrix.os }}
