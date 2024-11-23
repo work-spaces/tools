@@ -1,2 +1,3 @@
 # tools
-spaces examples for building and releasing tools
+
+Examples of how to run `spaces` in github actions.
