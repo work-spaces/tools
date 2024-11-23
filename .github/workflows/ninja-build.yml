@@ -3,7 +3,7 @@ name: Spaces Ninja Build Workflow
 on: workflow_dispatch
 
 permissions:
-  packages: write   # Allow modifying releases or packages
+  contents: write 
 
 jobs:
   run-spaces:
