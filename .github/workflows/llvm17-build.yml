@@ -1,4 +1,4 @@
-name: Spaces LLVM 16 Build Workflow
+name: Spaces LLVM 17 Build Workflow
 
 on: workflow_dispatch
 
@@ -26,7 +26,7 @@ jobs:
         run: spaces --version
 
       - name: Spaces Checkout
-        run: spaces checkout --workflows/preload --workflows/llvm16-config --script=workflows/llvm-build --name=workspace
+        run: spaces checkout --workflows/preload --workflows/llvm17-config --script=workflows/llvm-build --name=workspace
 
       - name: Spaces Run
         run: cd workspace && spaces run
