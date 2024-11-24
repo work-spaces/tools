@@ -26,7 +26,7 @@ jobs:
         run: spaces --version
 
       - name: Spaces Checkout
-        run: spaces checkout --workflows/preload --workflows/llvm16-config --script=workflows/llvm-build --name=workspace
+        run: spaces checkout --script=workflows/preload --script=workflows/llvm16-config --script=workflows/llvm-build --name=workspace
 
       - name: Spaces Run
         run: cd workspace && spaces run
