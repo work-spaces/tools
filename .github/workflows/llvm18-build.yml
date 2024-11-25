@@ -1,0 +1,32 @@
+name: Spaces LLVM 18 Build Workflow
+
+on: workflow_dispatch
+
+permissions:
+  contents: write 
+
+jobs:
+  run-spaces:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GIT_TERMINAL_PROMPT: 0
+
+    steps:
+      - name: Install Spaces CLI
+        uses: work-spaces/install-spaces@v0.11.3
+
+      - name: Clone Workflows Repository
+        run: git clone https://github.com/work-spaces/workflows.git
+      
+      - name: Spaces Version
+        run: spaces --version
+
+      - name: Spaces Checkout
+        run: spaces --ci checkout --script=workflows/preload --script=workflows/llvm18-config --script=workflows/llvm-build --name=workspace
+
+      - name: Spaces Run
+        run: cd workspace && spaces --ci run
