@@ -30,3 +30,4 @@ jobs:
 
       - name: Spaces Run
         run: cd workspace && spaces --ci run
+        timeout-minutes: 1440
