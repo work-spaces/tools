@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Install Spaces CLI
-        uses: work-spaces/install-spaces@v0.11.0
+        uses: work-spaces/install-spaces@v0.11.2
 
       - name: Clone Workflows Repository
         run: git clone https://github.com/work-spaces/workflows.git
